@@ -17,84 +17,86 @@ import { Header } from "./components/Header";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/dashboard" element={
-            <SidebarProvider>
-              <div className="min-h-screen flex w-full bg-gray-50">
-                <AppSidebar />
-                <div className="flex-1 flex flex-col">
-                  <Header />
-                  <main className="flex-1 p-6">
-                    <Dashboard />
-                  </main>
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/dashboard" element={
+              <SidebarProvider>
+                <div className="min-h-screen flex w-full bg-gray-50">
+                  <AppSidebar />
+                  <div className="flex-1 flex flex-col">
+                    <Header />
+                    <main className="flex-1 p-6">
+                      <Dashboard />
+                    </main>
+                  </div>
                 </div>
-              </div>
-            </SidebarProvider>
-          } />
-          <Route path="/patients" element={
-            <SidebarProvider>
-              <div className="min-h-screen flex w-full bg-gray-50">
-                <AppSidebar />
-                <div className="flex-1 flex flex-col">
-                  <Header />
-                  <main className="flex-1 p-6">
-                    <Patients />
-                  </main>
+              </SidebarProvider>
+            } />
+            <Route path="/patients" element={
+              <SidebarProvider>
+                <div className="min-h-screen flex w-full bg-gray-50">
+                  <AppSidebar />
+                  <div className="flex-1 flex flex-col">
+                    <Header />
+                    <main className="flex-1 p-6">
+                      <Patients />
+                    </main>
+                  </div>
                 </div>
-              </div>
-            </SidebarProvider>
-          } />
-          <Route path="/appointments" element={
-            <SidebarProvider>
-              <div className="min-h-screen flex w-full bg-gray-50">
-                <AppSidebar />
-                <div className="flex-1 flex flex-col">
-                  <Header />
-                  <main className="flex-1 p-6">
-                    <Appointments />
-                  </main>
+              </SidebarProvider>
+            } />
+            <Route path="/appointments" element={
+              <SidebarProvider>
+                <div className="min-h-screen flex w-full bg-gray-50">
+                  <AppSidebar />
+                  <div className="flex-1 flex flex-col">
+                    <Header />
+                    <main className="flex-1 p-6">
+                      <Appointments />
+                    </main>
+                  </div>
                 </div>
-              </div>
-            </SidebarProvider>
-          } />
-          <Route path="/reminders" element={
-            <SidebarProvider>
-              <div className="min-h-screen flex w-full bg-gray-50">
-                <AppSidebar />
-                <div className="flex-1 flex flex-col">
-                  <Header />
-                  <main className="flex-1 p-6">
-                    <Reminders />
-                  </main>
+              </SidebarProvider>
+            } />
+            <Route path="/reminders" element={
+              <SidebarProvider>
+                <div className="min-h-screen flex w-full bg-gray-50">
+                  <AppSidebar />
+                  <div className="flex-1 flex flex-col">
+                    <Header />
+                    <main className="flex-1 p-6">
+                      <Reminders />
+                    </main>
+                  </div>
                 </div>
-              </div>
-            </SidebarProvider>
-          } />
-          <Route path="/settings" element={
-            <SidebarProvider>
-              <div className="min-h-screen flex w-full bg-gray-50">
-                <AppSidebar />
-                <div className="flex-1 flex flex-col">
-                  <Header />
-                  <main className="flex-1 p-6">
-                    <Settings />
-                  </main>
+              </SidebarProvider>
+            } />
+            <Route path="/settings" element={
+              <SidebarProvider>
+                <div className="min-h-screen flex w-full bg-gray-50">
+                  <AppSidebar />
+                  <div className="flex-1 flex flex-col">
+                    <Header />
+                    <main className="flex-1 p-6">
+                      <Settings />
+                    </main>
+                  </div>
                 </div>
-              </div>
-            </SidebarProvider>
-          } />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </SidebarProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+              </SidebarProvider>
+            } />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
