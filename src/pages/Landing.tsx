@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -163,10 +162,12 @@ const Landing = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <Link to="/dashboard">
+              <Link to="/auth">
                 <Button variant="ghost">Sign In</Button>
               </Link>
-              <Button>Get Started</Button>
+              <Link to="/auth">
+                <Button>Get Started</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -189,10 +190,12 @@ const Landing = () => {
               Streamline your clinic operations with our comprehensive management system.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6">
-                Start Free Trial
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <Link to="/auth">
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Start Free Trial
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
               <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 Watch Demo
               </Button>
